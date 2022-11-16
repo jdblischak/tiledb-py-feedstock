@@ -1,15 +1,15 @@
 {% set name = "tiledb" %}
-{% set version = "0.18.2" %}
-{% set sha256 = "240d6e6343763f195395feaf22c04358d858ffc319ffa5304768e3f970c6a3d1" %}
+{% set version = "0.18.3.dev7.2022_11_15" %}
+{% set sha1 = "de8e02822c07b05f00a9921159f5f976debfd00b" %}
 
 package:
   name: tiledb-py
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  git_depth: -1
+  git_url: https://github.com/TileDB-Inc/TileDB-Py.git
+  git_rev: {{ sha1 }}
 
 build:
   number: 0
@@ -32,14 +32,14 @@ requirements:
     - cython
     - numpy
     - pybind11
-    - tiledb 2.12.*
+    - tiledb *.2022_11_15
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - dataclasses  # [py == 36]
     - contextvars  # [py == 36]
     - packaging
-    - tiledb 2.12.*
+    - tiledb *.2022_11_15
 
 {% if python_impl != 'pypy' %}
 test:
