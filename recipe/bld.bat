@@ -1,5 +1,1 @@
-set TILEDB_CONDA_BUILD=1
-
-"%PYTHON%" setup.py build_ext --tiledb=%LIBRARY_PREFIX% ^
-           install --single-version-externally-managed --record=record.txt
-if errorlevel 1 exit 1
+set "TILEDB_PATH=%LIBRARY_PREFIX%" && %PYTHON% -m pip install --no-build-isolation --no-deps --ignore-installed -v .
