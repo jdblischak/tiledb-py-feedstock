@@ -30,7 +30,7 @@ requirements:
     - cython <3.0
     - numpy
     - pybind11
-    - tiledb *.2024_07_23
+    - tiledb *.2024_07_22
     - scikit-build-core
   run:
     - python
