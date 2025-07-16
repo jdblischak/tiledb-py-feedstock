@@ -6,3 +6,13 @@ channel_sources:
   - conda-forge
 channel_priority:
   - strict
+python:
+  - 3.9.* *_cpython
+  - 3.12.* *_cpython
+is_python_min:
+  - 'true'
+  - 'false'
+channel_sources:
+  - tiledb/label/nightlies,conda-forge
+channel_targets:
+  - tiledb nightlies
