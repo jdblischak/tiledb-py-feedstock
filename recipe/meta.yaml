@@ -16,7 +16,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - pybind11                               # [build_platform != target_platform]
+    - pybind11 <3                            # [build_platform != target_platform]
     - cmake
     - make
   host:
@@ -27,7 +27,7 @@ requirements:
     - scikit-build-core
     - python
     - numpy
-    - pybind11
+    - pybind11 <3
     - tiledb 2.*
   run:
     - python
@@ -56,7 +56,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: Python interface to the TileDB sparse and dense multi-dimensional 
+  summary: Python interface to the TileDB sparse and dense multi-dimensional
     array storage manager
   description: |
     TileDB-Py is the python interface to the TileDB array storage manager.
@@ -64,7 +64,7 @@ about:
     a novel on-disk format that can store dense and sparse array data with
     support for fast reads and updates and reads. It features excellent compression, and an efficient
     parallel I/O system with high scalability.
-  doc_url: 
+  doc_url:
     https://tiledb-inc-tiledb.readthedocs-hosted.com/projects/tiledb-py/en/stable/python-api.html
   dev_url: https://github.com/TileDB-Inc/TileDB-Py
 
